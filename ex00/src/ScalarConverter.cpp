@@ -6,12 +6,12 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:15:43 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/02 00:06:20 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/07/03 14:38:02 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include "Colors.hpp"
+#include "colors.hpp"
 #include <iomanip>
 #include <iostream>
 
@@ -115,17 +115,17 @@ static std::string dlErrMsg(void) {
 }
 
 void ScalarConverter::displayConversion() {
-  std::cout << "char:\t";
+  std::cout << RESET << "char:\t" << YELLOW;
   if (isCharOk())
     std::cout << "'" << ScalarConverter::_char << "'\n";
   else
     std::cout << charErrMsg() << "\n";
-  std::cout << "int:\t";
+  std::cout << RESET << "int:\t" << YELLOW;
   if (isIntOk())
     std::cout << ScalarConverter::_int << "\n";
   else
     std::cout << intErrMsg() << "\n";
-  std::cout << "float:\t";
+  std::cout << RESET << "float:\t" << YELLOW;
   if (isFlOk()) {
     if (std::fabs(ScalarConverter::_float - ScalarConverter::_int) < 0.000001f)
       std::cout << std::fixed << std::setprecision(1) << ScalarConverter::_float
@@ -134,15 +134,16 @@ void ScalarConverter::displayConversion() {
       std::cout << std::fixed << ScalarConverter::_float << "f\n";
   } else
     std::cout << flErrMsg() << "\n";
-  std::cout << "double:\t";
+  std::cout << RESET << "double:\t" << YELLOW;
   if (isDlOk()) {
     if (std::fabs(ScalarConverter::_double - ScalarConverter::_int) < 0.000001)
       std::cout << std::fixed << std::setprecision(1)
-                << ScalarConverter::_double << "\n";
+                << ScalarConverter::_double;
     else
-      std::cout << std::fixed << ScalarConverter::_double << "\n";
+      std::cout << std::fixed << ScalarConverter::_double;
   } else
-    std::cout << dlErrMsg() << "\n";
+    std::cout << dlErrMsg();
+  std::cout << RESET << std::endl;
 }
 
 void ScalarConverter::convert(std::string const &literal) {

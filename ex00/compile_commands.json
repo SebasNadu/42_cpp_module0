@@ -50,5 +50,57 @@
     "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00",
     "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00/src/ScalarConverter.cpp",
     "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00/obj/ScalarConverter.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c++98",
+      "-I",
+      "include",
+      "-c",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      ".",
+      "-o",
+      "obj/setType.o",
+      "src/setType.cpp"
+    ],
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00/src/setType.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00/obj/setType.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c++98",
+      "-I",
+      "include",
+      "-c",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      ".",
+      "-o",
+      "obj/castScalar.o",
+      "src/castScalar.cpp"
+    ],
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00/src/castScalar.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module06/ex00/obj/castScalar.o"
   }
 ]

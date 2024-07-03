@@ -13,10 +13,10 @@ CYAN        := \033[0;96m
 WHITE       := \033[0;97m
 	
 ################################################################################
-##                                  CONVERT                                   ##
+##                                 SERIALIZE                                  ##
 ################################################################################
 
-NAME							:= convert
+NAME							:= serialize
 CXX								:= c++
 RM								:= rm -rf
 	
@@ -28,12 +28,12 @@ OBJ_DIR						:= obj
 SRC_DIR						:= src
 INC_DIR						:= include
 
-vpath %.hpp $(INC_DIR)
 vpath %.cpp $(SRC_DIR)
+vpath %.hpp $(INC_DIR)
 vpath %.o $(OBJ_DIR)
 
-HEADERS						:= ScalarConverter.hpp colors.hpp
-SOURCE						:= main.cpp ScalarConverter.cpp setType.cpp castScalar.cpp
+HEADERS						:= Serializer.hpp colors.hpp
+SOURCE						:= main.cpp Serializer.cpp
 OBJECTS						:= $(addprefix $(OBJ_DIR)/, $(SOURCE:.cpp=.o))
 	
 ################################################################################
@@ -81,7 +81,7 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADERS) | $(OBJ_DIR)
 $(OBJ_DIR):
 	@printf "$(MAGENTA)[$(NAME)] $(DEFAULT)Creating objects directory "
 	@printf "($(BLUE)$(OBJ_DIR)$(DEFAULT))..."
-	@mkdir -p $@	
+	@mkdir -p $@
 	@printf "\r%100s\r$(MAGENTA)[$(NAME)] $(DEFAULT)($(BLUE)$(OBJ_DIR)/$(DEFAULT)) "
 	@printf "Created successfully!\n"
 

@@ -6,12 +6,12 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 20:40:49 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/01 21:07:42 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/07/03 14:37:45 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Colors.hpp"
 #include "ScalarConverter.hpp"
+#include "colors.hpp"
 #include <iostream>
 
 int main(int argc, char **argv) {
