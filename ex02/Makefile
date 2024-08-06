@@ -30,7 +30,7 @@ INC_DIR						:= include
 
 vpath %.cpp $(SRC_DIR)
 vpath %.hpp $(INC_DIR)
-vpath %.o $(OBJ_DI)
+vpath %.o $(OBJ_DIR)
 
 HEADERS						:= Base.hpp A.hpp B.hpp C.hpp colors.hpp
 SOURCE						:= main.cpp Base.cpp
