@@ -6,12 +6,13 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:09:05 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/02 09:07:36 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/07 15:47:11 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 #include <limits>
+#include <cstdlib>
 
 static bool setInt(std::string const &literal) {
   char *endptr;
@@ -20,7 +21,7 @@ static bool setInt(std::string const &literal) {
   if (*endptr != '\0' || endptr == literal.c_str())
     return (false);
   if (nb > std::numeric_limits<int>::max() ||
-      nb < std::numeric_limits<int>::lowest()) {
+      nb < std::numeric_limits<int>::min()) {
     ScalarConverter::_errFlags |= ScalarConverter::INT_OVERFLOW;
     throw ScalarConverter::OverflowLiteral();
   }
@@ -37,7 +38,7 @@ static bool setFloat(std::string const &literal) {
   if (*endptr == 'f' && (endptr + 1 && *(endptr + 1) != '\0'))
     return (false);
   if (nb > std::numeric_limits<float>::max() ||
-      nb < std::numeric_limits<float>::lowest()) {
+      nb < -std::numeric_limits<float>::max()) {
     ScalarConverter::_errFlags |= ScalarConverter::FL_OVERFLOW;
     throw ScalarConverter::OverflowLiteral();
   }
@@ -55,7 +56,7 @@ static bool setDouble(std::string const &literal) {
   if (*endptr != '\0' || endptr == literal.c_str())
     return (false);
   if (nb > std::numeric_limits<double>::max() ||
-      nb < std::numeric_limits<double>::lowest()) {
+      nb < -std::numeric_limits<double>::max()) {
     ScalarConverter::_errFlags |= ScalarConverter::DL_OVERFLOW;
     throw ScalarConverter::OverflowLiteral();
   }

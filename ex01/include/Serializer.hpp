@@ -6,12 +6,13 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:06:45 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/03 12:35:56 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/07 18:27:58 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
 
 #include <string>
+#include <stdint.h>
 
 typedef struct Data {
   std::string name;

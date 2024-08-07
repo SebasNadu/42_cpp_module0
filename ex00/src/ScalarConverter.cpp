@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 09:15:43 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/03 14:38:02 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/07 15:42:58 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "colors.hpp"
 #include <iomanip>
 #include <iostream>
+#include <limits>
+#include <cmath>
 
 int ScalarConverter::_errFlags = OK;
 ScalarConverter::t_ScalarType ScalarConverter::_type = DEFAULT;
@@ -35,27 +37,27 @@ static void setErrFlags(void) {
   switch (ScalarConverter::_type) {
   case ScalarConverter::INT:
     if (ScalarConverter::_int > std::numeric_limits<char>::max() ||
-        ScalarConverter::_int < std::numeric_limits<char>::lowest())
+        ScalarConverter::_int < std::numeric_limits<char>::min())
       ScalarConverter::_errFlags |= ScalarConverter::CHAR_OVERFLOW;
     break;
   case ScalarConverter::FLOAT:
     if (ScalarConverter::_float > std::numeric_limits<char>::max() ||
-        ScalarConverter::_float < std::numeric_limits<char>::lowest())
+        ScalarConverter::_float < std::numeric_limits<char>::min())
       ScalarConverter::_errFlags |= ScalarConverter::CHAR_OVERFLOW;
     if (ScalarConverter::_float > std::numeric_limits<int>::max() ||
-        ScalarConverter::_float < std::numeric_limits<int>::lowest()) {
+        ScalarConverter::_float < std::numeric_limits<int>::min()) {
       ScalarConverter::_errFlags |= ScalarConverter::INT_OVERFLOW;
     }
     break;
   case ScalarConverter::DOUBLE:
     if (ScalarConverter::_double > std::numeric_limits<char>::max() ||
-        ScalarConverter::_double < std::numeric_limits<char>::lowest())
+        ScalarConverter::_double < std::numeric_limits<char>::min())
       ScalarConverter::_errFlags |= ScalarConverter::CHAR_OVERFLOW;
     if (ScalarConverter::_double > std::numeric_limits<int>::max() ||
-        ScalarConverter::_double < std::numeric_limits<int>::lowest())
+        ScalarConverter::_double < std::numeric_limits<int>::min())
       ScalarConverter::_errFlags |= ScalarConverter::INT_OVERFLOW;
     if (ScalarConverter::_double > std::numeric_limits<float>::max() ||
-        ScalarConverter::_double < std::numeric_limits<float>::lowest())
+        ScalarConverter::_double < -std::numeric_limits<float>::max())
       ScalarConverter::_errFlags |= ScalarConverter::FL_OVERFLOW;
     break;
   default:

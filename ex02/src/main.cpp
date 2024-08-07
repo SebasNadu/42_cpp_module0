@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:50:40 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/07/04 20:02:04 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/07 18:43:12 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,19 @@ void identify(Base &p) {
     (void)dynamic_cast<A &>(p);
     std::cout << "A" << std::endl;
     return;
-  } catch (std::bad_cast &bc) {
+  } catch (std::exception &e) {
   }
   try {
     (void)dynamic_cast<B &>(p);
     std::cout << "B" << std::endl;
     return;
-  } catch (std::bad_cast &bc) {
+  } catch (std::exception &e) {
   }
   try {
     (void)dynamic_cast<C &>(p);
     std::cout << "C" << std::endl;
     return;
-  } catch (std::bad_cast &bc) {
+  } catch (std::exception &e) {
   }
   std::cout << "Unknown" << std::endl;
 }

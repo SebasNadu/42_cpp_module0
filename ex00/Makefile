@@ -28,8 +28,8 @@ OBJ_DIR						:= obj
 SRC_DIR						:= src
 INC_DIR						:= include
 
-vpath %.hpp $(INC_DIR)
 vpath %.cpp $(SRC_DIR)
+vpath %.hpp $(INC_DIR)
 vpath %.o $(OBJ_DIR)
 
 HEADERS						:= ScalarConverter.hpp colors.hpp
